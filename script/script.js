@@ -9,10 +9,9 @@ let isNumber = function(n){
 
 let game = function(){
    let correctNumber = Math.floor(Math.random() * 101);
-   let count = 1;
    let getNumber = function(){
       let userNumber = prompt('Угадай число от 1 до 100');
-      if(userNumber === null || count === 10){
+      if(userNumber === null){
          alert('Игра окончена');
       } else if (!isNumber(userNumber) || parseFloat(userNumber) > 100){
          confirm('Введи число от 0 до 100!');
@@ -27,8 +26,7 @@ let game = function(){
          confirm('Загаданное число больше. Попробую еще раз');
          return getNumber();
       } 
-      
-      count++;
+   
    }
    return getNumber();
 }
